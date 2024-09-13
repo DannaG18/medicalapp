@@ -35,6 +35,8 @@ CREATE TABLE appointment (
     pacient_id INT NOT NULL,
     date_time TIMESTAMP NOT NULL,
     status VARCHAR(20),
-    CONSTRAINT pk_appointment_id PRIMARY KEY (id)
+    CONSTRAINT pk_appointment_id PRIMARY KEY (id),
+    CONSTRAINT fk_appointment_doctor_id FOREIGN KEY (doctor_id) REFERENCES doctor(id),
+    CONSTRAINT fk_appointment_pacient_id FOREIGN KEY (pacient_id) REFERENCES pacient(id)
 );
 
